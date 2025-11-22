@@ -13,6 +13,10 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/services",
+        element: <Coverage />,
+      },
+      {
         path: "/coverage",
         element: <Coverage />,
       },

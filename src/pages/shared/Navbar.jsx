@@ -8,12 +8,12 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
-      { label: "Services", href: "#" },
-      { label: "Coverage", href: "#" },
-      { label: "About Us", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "Services", path: "/services" },
+      { label: "Coverage", path: "/coverage" },
+      { label: "About Us", path: "/about-us" },
+      { label: "Pricing", path: "/pricing" },
+      { label: "Blog", path: "/blog" },
+      { label: "Contact", path: "/contact" },
     ];
 
   return (
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end hidden lg:flex gap-2">
           <button className="btn btn-ghost">Sign In</button>
-          <button className="btn btn-success">Sign Up</button>
+          <button className="btn bg-primary">Sign Up</button>
         </div>
       </MyContainer>
 
