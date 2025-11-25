@@ -1,5 +1,5 @@
 import React, { use } from 'react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import customer_top from "../../assets/customer-top.png";
 import ReviewCard from './ReviewCard';
@@ -23,24 +23,30 @@ const Reviews = ({ reviewsPromise }) => {
             </p>
           </div>
           <Swiper
+            loop={true}
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={3}
             coverflowEffect={{
-              rotate: 50,
-              stretch: 0,
-              depth: 100,
+              rotate: 30,
+              stretch: "50%",
+              depth: 200,
               modifier: 1,
+              scale: 0.75,
               slideShadows: true,
             }}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
             pagination={true}
-            modules={[EffectCoverflow, Pagination]}
             className="mySwiper my-8"
           >
             {reviews.map((reView) => (
               <SwiperSlide key={reView.id}>
-                    <ReviewCard reView={reView} />
+                <ReviewCard reView={reView} />
               </SwiperSlide>
             ))}
           </Swiper>

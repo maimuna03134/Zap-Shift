@@ -3,6 +3,7 @@ import MyContainer from "../../components/MyContainer";
 import Hamburger from "hamburger-react";
 import Logo from "../../components/Logo";
 import MyLinks from "../../components/MyLinks";
+import { Link } from "react-router";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
     ];
 
   return (
-    <div className="bg-white shadow-lg sticky top-0 z-50">
+    <div className="bg-white shadow-lg ">
       <MyContainer className={"navbar"}>
         <div className="navbar-start">
           {/* Hamburger Menu - Mobile Only */}
@@ -29,19 +30,19 @@ const Navbar = () => {
                 color="#1f2937"
                 size={24}
                 distance="sm"
-                          />
+              />
             </div>
           </div>
 
-          <a className="text-xl">
+          <div className="text-xl">
             <Logo />
-          </a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal space-x-3">
             {navItems.map((item) => (
               <li key={item.label}>
-                <MyLinks href={item.href}>{item.label}</MyLinks>
+                <MyLinks to={item.path}>{item.label}</MyLinks>
               </li>
             ))}
           </ul>
@@ -57,9 +58,9 @@ const Navbar = () => {
           <ul className="menu menu-vertical p-4 space-y-2">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a href={item.href} onClick={() => setIsOpen(false)}>
+                <MyLinks to={item.path} onClick={() => setIsOpen(false)}>
                   {item.label}
-                </a>
+                </MyLinks>
               </li>
             ))}
             <li className="border-t border-gray-200 pt-2 mt-2">
