@@ -48,8 +48,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end hidden lg:flex gap-2">
-          <button className="btn btn-ghost">Sign In</button>
-          <button className="btn bg-primary">Sign Up</button>
+          <Link to="/auth/login">
+            <button className="btn btn-ghost">Sign In</button>
+          </Link>
+          <Link to="/auth/register">
+            <button className="btn bg-primary">Sign Up</button>
+          </Link>
         </div>
       </MyContainer>
 
